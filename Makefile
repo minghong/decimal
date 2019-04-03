@@ -6,11 +6,14 @@ OBJS=decimal.o
 %.o: %.cpp $(DEPS)
 	$(CC) -c -g -o $@ $< $(CFLAGS)
 
-add::$(OBJS) testadd.o
-	$(CC) -o testadd.exe testadd.o decimal.o -lstdc++
+div:$(OBJS) testdiv.o
+	$(CC) -o div.exe testdiv.o decimal.o -lstdc++
+
+add:$(OBJS) testadd.o
+	$(CC) -o add.exe testadd.o decimal.o -lstdc++
 
 convert:$(OBJS) testconvert.o
-	$(CC) -o testconvert.exe testconvert.o decimal.o -lstdc++
+	$(CC) -o convert.exe testconvert.o decimal.o -lstdc++
 
 clean:
 	rm *.o *.exe 

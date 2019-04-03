@@ -5,15 +5,16 @@
 #include "decimal.h"
 
 typedef struct {
-    char * d1;
-    char * d2;
-    char * d3;
+    const char * d1;
+    const char * d2;
+    const char * d3;
 } testcase;
 
 int main()
 {
     testcase cases[] = {
         {"1234.4", "5.999", ""},
+        {"999999999999999999", "1", ""},
     };
 
     int count = sizeof(cases) / sizeof(testcase);
